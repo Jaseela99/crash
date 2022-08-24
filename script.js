@@ -151,7 +151,74 @@ switch (color) {
     break;
   case "blue":
     console.log("color is blue");
+    break;
 
   default:
     console.log("color is not blue or red");
+    break;
 }
+
+//function
+
+function sum(num1,num2){
+return (num1+num2)
+}
+const add=(num1,num2)=>num1+num2
+console.log(sum(5,5))
+console.log(add(5,5))
+//OOPS
+//constructor function
+/* function Personed(first,last,dob){
+  this.first =first;
+  this.last=last;
+  this.dob=new Date(dob);
+  //methods
+//  this.getBirthYear=()=>{
+//   return this.dob.getFullYear()
+// };
+// this.getFullName=function(){
+//   return `${this.first} ${this.last}`;
+// } 
+} */
+//instantiate object
+/* const personed1 = new Personed("jaseela","jaleel",'2-5-1999');
+console.log(personed1.getBirthYear());
+console.log(personed1.getFullName()); */
+//prototypes
+
+//we do not need methods for every instance of object so we define a prototype
+/* Personed.prototype.getBirthYear=()=>{
+  return this.dob.getFullYear()
+}
+Personed.prototype.getFullName=()=>{
+  return `${this.first} ${this.last}`
+}
+console.log(personed1.getBirthYear());
+console.log(personed1.getFullName()); */
+
+//Classes
+class Personed {
+constructor(first,last,dob){
+  this.first =first;
+  this.last=last;
+  this.dob=new Date(dob);
+}
+//instead of prototypes we add methods here
+getBirthYear(){
+  return this.dob.getFullYear()
+};
+getFullName(){
+  return `${this.first} ${this.last}`
+}
+}
+const personed1 = new Personed("jaseela","jaleel",'2-5-1999')
+console.log(personed1.getBirthYear());
+console.log(personed1.getFullName());
+
+
+//DOM
+
+
+
+
+
