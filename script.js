@@ -217,8 +217,72 @@ console.log(personed1.getFullName());
 
 
 //DOM
+console.log(window)//window is the topmost object
+//single element selector
+
+/* const form=document.getElementById('my-form')
+const container=document.querySelector('.container')
+ */
+//multiple element selector
+
+//returns all the items with class item as a nodelist
+//const users = document.querySelectorAll('.item')
+//document.getElementsByClassName('item') returns an html collection so to use it we need to convert it in to array
+// document.getElementsByTagName('li') returns html collection
+
+//looping through items
+
+/* users.forEach(user=>console.log(user))
+
+const ul = document.querySelector('.items') */
+//ul.remove() removes the list
+//ul.lastElementChild.remove() to remove last in the list
+//ul.firstElementChild.textContent="Hello" edit the text
+//ul.children[1].innerText="hi" to change the innertext of second child
+//ul.lastElementChild.innerHTML="<h4>hello</h4>" to edit the innerHTML including the tags
+
+//to change styles
+//const button = document.querySelector('.btn')
+//button.style.background='red'
 
 
+//add event ,first parnthesis is event and the next is an event handler
+/* button.addEventListener('click',(e)=>{
+  e.preventDefault()
+form.style.background="blue"
+//to add classname within the body
+document.querySelector('body').classList.add('bg-dark')
+ul.style.color="black"
+}) */
 
+/* --------------------------------------------------- */
+//to add userslist when userdetails are submitted
 
+const form = document.getElementById('my-form')
+const nameInput = document.getElementById('name')
+const emailInput = document.getElementById('email')
+const msg = document.querySelector('.msg')
+const userList = document.querySelector('#users')
+
+form.addEventListener('submit',onSubmit)
+function onSubmit(e){
+  e.preventDefault()
+ if(nameInput.value===""|| emailInput.value==="" ){
+  msg.classList.add('error')
+  msg.innerHTML="required fields are not filled"
+  setTimeout(()=>msg.remove(),3000)}
+  else{
+    //craetes a list element
+    const li = document.createElement('li')
+    //apppends a textnode to lastchid of the li element
+    li.appendChild(document.
+      createTextNode(`${nameInput.value}:${emailInput.value}`))
+  //appends list items to ul element
+  userList.appendChild(li)
+  //clearing the fields
+
+  nameInput.value=""
+  emailInput.value=""
+    }
+}
 
